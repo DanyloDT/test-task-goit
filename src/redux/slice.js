@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getTweetsThunk } from "./operations";
+import { getTweetsThunk, putTweetsThunk } from "./operations";
 
 const initialState = {
   tweets: [],
-  isFollowing: "false",
   loading: "false",
   error: null,
 };
@@ -24,6 +23,10 @@ const tweetsSlice = createSlice({
     builder
       .addCase(getTweetsThunk.fulfilled, (state, action) => {
         state.tweets = action.payload;
+        state.loading = false;
+      })
+      .addCase(putTweetsThunk.fulfilled, (state, action) => {
+        state.tweets.push(action.payload);
         state.loading = false;
       })
       .addMatcher((action) => action.type.endsWith("/pending"), pending)
