@@ -10,7 +10,24 @@ export const getTweetsThunk = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await mockApi.get("/tweets");
-      //   console.log(data);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const putTweetsThunk = createAsyncThunk(
+  "tweets/patchTweets",
+  async ({ id, followers, isFollowing }, { rejectWithValue, dispatch }) => {
+    try {
+      const { data } = await mockApi.put(`/tweets/${id}`, {
+        followers,
+        isFollowing,
+      });
+      dispatch(getTweetsThunk());
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

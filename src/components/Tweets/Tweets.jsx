@@ -1,41 +1,28 @@
-import { useSelector } from "react-redux";
-import { selectFollowing, selectTweets } from "../../redux/selector";
+import PropTypes from "prop-types";
 import css from "./Tweets.module.css";
-import Logo from "../../images/logo.svg";
 
-const Tweets = () => {
-  const tweets = useSelector(selectTweets);
-  const isFollowing = useSelector(selectFollowing);
-  console.log(tweets);
+import TweetsItem from "../TweetsItem/TweetsItem";
+
+const Tweets = ({ limitedTweets }) => {
   return (
     <ul className={css.list}>
-      {tweets.map(({ avatar, followers, id, tweets, user }) => {
-        return (
-          <li key={id} className={css.item}>
-            <div className={css.picture}>
-              <svg width={"76px"} height={"22px"} className={css.logo}>
-                <use href={Logo} />
-              </svg>
-            </div>
-
-            <div className={css.blockAvatar}>
-              <spa className={css.line}></spa>
-              <div className={css.divAvatar}>
-                <img className={css.avatar} src={avatar} alt={user} />
-              </div>
-            </div>
-            <p className={`${css.text} ${css.tweets}`}>{`${tweets} tweets`}</p>
-            <p
-              className={`${css.text} ${css.followers}`}
-            >{`${followers} followers`}</p>
-            <button className={css.button}>
-              {isFollowing ? "Follow" : "Following"}
-            </button>
-          </li>
-        );
+      {limitedTweets.map((item) => {
+        return <TweetsItem key={item.id} {...item} />;
       })}
     </ul>
   );
 };
 
 export default Tweets;
+
+Tweets.propTypes = {
+  limitedTweets: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      user: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
+      followers: PropTypes.number.isRequired,
+      tweets: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
