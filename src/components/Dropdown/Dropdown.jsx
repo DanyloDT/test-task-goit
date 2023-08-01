@@ -7,7 +7,6 @@ const Dropdown = () => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    console.log(event.target.value);
     dispatch(setDropdown(event.target.value));
   };
 
