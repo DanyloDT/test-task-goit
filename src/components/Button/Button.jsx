@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
+import { selectLoading } from "../../redux/Tweets/selector";
+import { putTweetsThunk } from "../../redux/Tweets/operations";
 import css from "./Button.module.css";
-import { putTweetsThunk } from "../../redux/operations";
-import { selectLoading } from "../../redux/selector";
 
 const Button = ({ followers, id, isFollowing }) => {
   const loading = useSelector(selectLoading);

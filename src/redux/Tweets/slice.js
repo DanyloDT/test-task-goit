@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 import { getTweetsThunk, putTweetsThunk } from "./operations";
 
 const initialState = {

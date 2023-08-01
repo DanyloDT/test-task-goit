@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTweetsThunk } from "../../redux/operations";
+import { useEffect, useState } from "react";
+import { getTweetsThunk } from "../../redux/Tweets/operations";
 import Tweets from "../../components/Tweets/Tweets";
 import LoadMore from "../../components/LoadMore/LoadMore";
-import { selectTweets } from "../../redux/selector";
+import Dropdown from "../../components/Dropdown/Dropdown";
+import { selectDropdownFilter } from "../../redux/Dropdown/select";
+import { Link } from "react-router-dom";
 
 const TweetsPage = () => {
-  const tweets = useSelector(selectTweets);
+  const tweets = useSelector(selectDropdownFilter);
   const dispatch = useDispatch();
   const [limit, setLimit] = useState(3);
   const limitedTweets = tweets.slice(0, limit);
@@ -22,6 +24,8 @@ const TweetsPage = () => {
 
   return (
     <>
+      <Link to="/">BACK</Link>
+      <Dropdown />
       <Tweets limitedTweets={limitedTweets} />
       {showBtn && <LoadMore onHandleLoadBtn={onHandleLoadBtn} />}
     </>

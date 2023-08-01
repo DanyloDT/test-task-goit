@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { ReactComponent as Logo } from "../../images/logo.svg";
-
-import css from "./TweetsItem.module.css";
 import Button from "../Button/Button";
 import formattedValue from "../../config/formattedFollowers";
+
+import css from "./TweetsItem.module.css";
 
 const TweetsItem = ({
   avatar,
