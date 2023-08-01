@@ -4,6 +4,6 @@ The "Tweets" application is a simple client for viewing and managing tweets. The
 ## Functionality
 The "Tweets" application provides the following functionality:
 
-1.View a list of tweets.
-2.Follow and unfollow users.
-3.Filter tweets by type: "ALL", "FOLLOW", and "FOLLOWING".
+1. View a list of tweets.
+2. Follow and unfollow users.
+3. Filter tweets by type: "ALL", "FOLLOW", and "FOLLOWING".
