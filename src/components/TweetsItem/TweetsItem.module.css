@@ -33,7 +33,6 @@
   (min-resolution: 2dppx) {
   .picture {
     background-image: url(../../images/picture2@2x.png);
-    /* url(../../images/logo.svg); */
   }
 }
 .logo {
@@ -91,7 +90,6 @@
 
 .text {
   color: #ebd8ff;
-  font-family: Montserrat;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;

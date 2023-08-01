@@ -1,67 +1,49 @@
-/* .header {
+.header {
+  position: sticky;
   top: 0;
   left: 0;
-  position: sticky;
-  z-index: 1100;
+  z-index: 1000;
 
   min-height: 64px;
   padding-right: 24px;
   padding-left: 24px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
   width: 100vw;
   background-color: #ffffff;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-} */
+}
 .container {
-  /* max-width: 1440px; */
+  gap: 60px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 25px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #404bbf;
-  transition: scale var(--transition);
-  background-color: #ffffff;
-}
-
-.logo:hover {
-  color: #404bbf;
-  text-decoration: underline;
 }
 
 .navLink {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
-  letter-spacing: 0.64px;
-
-  padding: 8px 20px;
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: normal;
   text-transform: uppercase;
+  padding: 8px 20px;
 
   border-radius: 7px;
-  transition: color var(--transition), background-color var(--transition);
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
-.navLink:hover {
+.navLink:hover,
+.button:focus {
   color: #ffffff;
-  text-decoration: underline;
-  background-color: #404bbf;
+  background-color: rgb(13, 206, 135);
 }
 
 .navLink:global.active {
   color: #ffffff;
-  background-color: #404bbf;
+  background-color: rgb(2, 203, 129);
 }

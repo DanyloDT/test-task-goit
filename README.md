@@ -1,8 +1,9 @@
-# React + Vite
+Application "Tweets"
+The "Tweets" application is a simple client for viewing and managing tweets. The application is built using the React library and managed by state stored in Redux. You can view a list of tweets, add new tweets, follow and unfollow users.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Functionality
+The "Tweets" application provides the following functionality:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.View a list of tweets.
+2.Follow and unfollow users.
+3.Filter tweets by type: "ALL", "FOLLOW", and "FOLLOWING".

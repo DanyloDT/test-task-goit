@@ -4,17 +4,15 @@ import css from "./Navbar.module.css";
 const Navbar = () => {
   return (
     <header className={css.header}>
-      <div className={css.container}>
-        <NavLink className={css.logo} to="/">
-          <span>TWEETS</span>
+      <nav className={css.container}>
+        <NavLink className={css.navLink} to="/">
+          HOME
         </NavLink>
 
-        <nav>
-          <NavLink className={css.navLink} to="/tweets">
-            Tweets
-          </NavLink>
-        </nav>
-      </div>
+        <NavLink className={css.navLink} to="/tweets">
+          TWEETS
+        </NavLink>
+      </nav>
     </header>
   );
 };

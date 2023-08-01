@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { setDropdown } from "../../redux/Dropdown/slice";
+import css from "./Dropdown.module.css";
 
 const Dropdown = () => {
   const options = ["ALL", "FOLLOW", "FOLLOWING"];
@@ -12,7 +13,7 @@ const Dropdown = () => {
 
   return (
     <div>
-      <select onChange={handleChange}>
+      <select className={css.select} onChange={handleChange}>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}

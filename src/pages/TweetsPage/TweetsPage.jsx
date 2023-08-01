@@ -6,6 +6,8 @@ import LoadMore from "../../components/LoadMore/LoadMore";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import { selectDropdownFilter } from "../../redux/Dropdown/select";
 import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
+import css from "./TweetsPage.module.css";
 
 const TweetsPage = () => {
   const tweets = useSelector(selectDropdownFilter);
@@ -24,8 +26,12 @@ const TweetsPage = () => {
 
   return (
     <>
-      <Link to="/">BACK</Link>
-      <Dropdown />
+      <div className={css.div}>
+        <Link className={css.button} to="/">
+          <BsArrowLeft /> BACK
+        </Link>
+        <Dropdown />
+      </div>
       <Tweets limitedTweets={limitedTweets} />
       {showBtn && <LoadMore onHandleLoadBtn={onHandleLoadBtn} />}
     </>

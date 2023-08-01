@@ -22,7 +22,7 @@ const Button = ({ followers, id, isFollowing }) => {
 
   return (
     <button
-      className={css.button}
+      className={`${css.button} ${!isFollowing ? css.follow : css.following}  `}
       onClick={isFollowing ? handleFollow : handleFollowing}
       disabled={loading}
     >

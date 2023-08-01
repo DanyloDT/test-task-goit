@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap");
+@import "node_modules/modern-normalize/modern-normalize.css";
+
+body {
+  margin: 0;
+  background-color: rgb(71, 28, 169, 0.6);
+  font-family: Montserrat;
+}
 
 h1,
 h2,
